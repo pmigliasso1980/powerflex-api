@@ -71,7 +71,7 @@
 
 
 
-## Project setup
+# Project setup
 
 1. **Open Terminal.**
 

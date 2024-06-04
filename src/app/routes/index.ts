@@ -12,7 +12,6 @@ import SprocketRepository from "../repositories/sprocket.repository";
 
 export default class Routes {
   constructor(app: Application) {
-
     const factoryRepository = new FactoryRepository();
     const factoryService = new FactoryService(factoryRepository);
     const factoryController = new FactoryController(factoryService);

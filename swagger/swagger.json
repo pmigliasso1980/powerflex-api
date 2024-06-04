@@ -1,0 +1,325 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Powerflex API",
+      "description": "API for managing powerflex api",
+      "version": "1.0.0"
+    },
+    "servers": [
+      {
+        "url": "http://localhost:8080"
+      }
+    ],
+    "paths": {
+      "/api/factories": {
+        "get": {
+          "summary": "Get all factories",
+          "responses": {
+            "200": {
+              "description": "A list of factories",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Factory"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "post": {
+          "summary": "Create a new factory",
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Factory"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "The newly created factory",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Factory"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/factories/{id}": {
+        "get": {
+          "summary": "Get factory by ID",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "The factory",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Factory"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "put": {
+          "summary": "Update factory by ID",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer"
+              }
+            }
+          ],
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Factory"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "The updated factory",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Factory"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "delete": {
+          "summary": "Delete factory by ID",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Factory deleted successfully"
+            }
+          }
+        }
+      },
+      "/api/sprockets": {
+        "get": {
+          "summary": "Get all sprockets",
+          "responses": {
+            "200": {
+              "description": "A list of sprockets",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Sprocket"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "post": {
+          "summary": "Create a new sprocket",
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Sprocket"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "The newly created sprocket",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Sprocket"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/sprockets/{id}": {
+        "get": {
+          "summary": "Get sprocket by ID",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "The sprocket",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Sprocket"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "put": {
+          "summary": "Update sprocket by ID",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer"
+              }
+            }
+          ],
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Sprocket"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "The updated sprocket",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Sprocket"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "delete": {
+          "summary": "Delete sprocket by ID",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Sprocket deleted successfully"
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "Factory": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "chart_data": {
+              "type": "object",
+              "properties": {
+                "sprocket_production_actual": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer"
+                  }
+                },
+                "sprocket_production_goal": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer"
+                  }
+                },
+                "time": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "description": "Unix timestamp"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "Sprocket": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "teeth": {
+              "type": "integer"
+            },
+            "pitch_diameter": {
+              "type": "number",
+              "format": "float"
+            },
+            "outside_diameter": {
+              "type": "number",
+              "format": "float"
+            },
+            "pitch": {
+              "type": "number",
+              "format": "float"
+            }
+          }
+        }
+      }
+    }
+  }
+  

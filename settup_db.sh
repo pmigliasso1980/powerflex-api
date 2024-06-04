@@ -19,7 +19,4 @@ else
     createdb -h $DB_HOST -U $DB_USER $DB_NAME
 fi
 
-echo "Running migrations..."
-npm run migrate
-
 echo "Database setup complete."

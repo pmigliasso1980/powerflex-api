@@ -135,3 +135,46 @@
 12. **Open your browser**
 13. **Go to [api-docs](http://localhost:8080/api-docs)**
 14. **![Swagger UI](https://imgur.com/hdcE2VZ)**
+15. **Run tests coverage**
+    ```sh
+    npm run test
+    ```
+    ```sh
+    > powerflex-api@1.0.0 test
+    > jest --coverage ./src
+
+    PASS  src/app/services/factory.service.test.ts
+    PASS  src/app/services/sprocket.service.test.ts
+    ● Console
+
+        console.log
+        sprocketRepository.delete
+
+        at Object.log (src/app/services/sprocket.service.test.ts:53:21)
+
+    PASS  src/app/repositories/factory.repository.test.ts
+    PASS  src/app/repositories/sprocket.repository.test.ts
+    -------------------------|---------|----------|---------|---------|-------------------
+    File                     | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+    -------------------------|---------|----------|---------|---------|-------------------
+    All files                |    28.2 |        0 |   35.71 |    28.2 |                   
+    app/mappers             |       0 |        0 |       0 |       0 |                   
+    factory.mapper.ts      |       0 |        0 |       0 |       0 | 5-15              
+    sprocket.mapper.ts     |       0 |        0 |       0 |       0 | 5-18              
+    app/repositories        |   22.85 |      100 |      40 |   22.85 |                   
+    factory.repository.ts  |   23.52 |      100 |      40 |   23.52 | 7-20,28-42,50     
+    sprocket.repository.ts |   22.22 |      100 |      40 |   22.22 | 6-24,32-46,54     
+    app/services            |      56 |      100 |      50 |      56 |                   
+    factory.service.ts     |   58.33 |      100 |      50 |   58.33 | 10-12,16,24-26    
+    sprocket.service.ts    |   53.84 |      100 |      50 |   53.84 | 10-13,17,25-27    
+    models                  |       0 |        0 |       0 |       0 |                   
+    factory.model.ts       |       0 |        0 |       0 |       0 | 23-28             
+    sprocket.model.ts      |       0 |        0 |       0 |       0 |                   
+    -------------------------|---------|----------|---------|---------|-------------------
+
+    Test Suites: 4 passed, 4 total
+    Tests:       8 passed, 8 total
+    Snapshots:   0 total
+    Time:        0.753 s, estimated 1 s
+    Ran all test suites matching /.\/src/i.
+    ```

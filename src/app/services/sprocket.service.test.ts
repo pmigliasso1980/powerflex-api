@@ -50,7 +50,6 @@ describe('SprocketService', () => {
 
             //assert sprocketRepository.delete
             expect(sprocketRepository.delete).toHaveBeenCalledTimes(1);
-            console.log('sprocketRepository.delete');
         });
     });
 });
